@@ -1,0 +1,152 @@
+/* Reset y tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #1E293B; /* Azul oscuro suave */
+    background-color: #F8FAFC; /* Fondo neutro */
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #93C5FD, #BFDBFE);
+    color: #1E3A8A;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+}
+
+header .contact span {
+    display: block;
+    margin: 5px 0;
+}
+
+header .contact a {
+    color: #1E3A8A;
+    text-decoration: none;
+}
+
+.btn-download {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #60A5FA;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-download:hover {
+    background-color: #3B82F6;
+}
+
+/* Secciones */
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section h2 {
+    color: #1E40AF;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    color: #1E3A8A;
+    margin-bottom: 5px;
+}
+
+.card span {
+    font-size: 0.9rem;
+    color: #64748B;
+}
+
+/* Habilidades */
+.skills {
+    display: grid;
+    gap: 15px;
+}
+
+.skill span {
+    font-weight: bold;
+}
+
+.bar {
+    background-color: #E0F2FE;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 5px;
+    height: 15px;
+}
+
+.bar div {
+    height: 100%;
+    background-color: #3B82F6;
+    width: 0;
+    border-radius: 8px;
+    transition: width 1s ease-in-out;
+}
+
+/* Soft skills */
+.soft-skills {
+    margin-top: 20px;
+    text-align: center;
+    font-style: italic;
+    color: #1E3A8A;
+}
+
+/* Idiomas */
+#idiomas ul, #certificaciones ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#idiomas li, #certificaciones li {
+    padding: 8px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #93C5FD;
+    color: #1E3A8A;
+}
