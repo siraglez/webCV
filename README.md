@@ -17,20 +17,6 @@ Este proyecto está diseñado como un **portfolio profesional** que permite a re
 
 ---
 
-## 📂 Estructura del proyecto
-
-cv-sira-web/
-│
-├─ index.html # Página principal del CV web
-├─ style.css # Estilos del CV
-├─ script.js # Animaciones y barra lateral activa
-├─ CV_Sira.pdf # CV en PDF para descarga
-│
-README.md # Documentación del proyecto
-
-
----
-
 ## 🚀 Secciones del CV Web
 
 1. **Experiencia** – Proyectos y trabajos previos, incluyendo prácticas universitarias.  
