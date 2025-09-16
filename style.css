@@ -1,73 +1,189 @@
-/* Reset y tipografía */
-* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
-body { font-family:'Arial',sans-serif; line-height:1.6; color:#1E293B; background-color:#F8FAFC; display:flex; }
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
 
-/* Sidebar */
+body {
+    display: flex;
+    background-color: #EAF0FA; /* azul muy suave de fondo */
+    color: #1e293b; /* azul oscuro para texto */
+    line-height: 1.6;
+}
+
+/* Barra lateral */
 #sidebar {
     position: fixed;
-    top:0;
-    left:0;
-    width:220px;
-    height:100%;
-    background: linear-gradient(to bottom, #93C5FD, #BFDBFE);
-    padding:40px 20px;
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background-color: #3B82F6; /* azul intenso */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-#sidebar h2 { color:#1E3A8A; margin-bottom:30px; font-size:1.5rem; }
-#sidebar ul { list-style:none; width:100%; }
-#sidebar ul li { margin:15px 0; }
-#sidebar ul li a { color:#1E3A8A; text-decoration:none; font-weight:bold; }
-#sidebar ul li a:hover { color:#3B82F6; }
-.btn-download { margin-top:auto; padding:10px 20px; background-color:#60A5FA; color:white; border-radius:8px; text-decoration:none; transition:0.3s; }
-.btn-download:hover { background-color:#3B82F6; }
 
-/* Main content */
-#main-content { margin-left:240px; padding:40px; max-width:900px; }
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar ul li {
+    margin-bottom: 20px;
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+#sidebar ul li a.active,
+#sidebar ul li a:hover {
+    color: #f0f4f8; /* azul claro para resaltar */
+}
+
+.btn-download {
+    display: inline-block;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #3B82F6;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-download:hover {
+    background-color: #DBEAFE;
+}
+
+/* Contenido principal */
+main {
+    margin-left: 240px;
+    padding: 20px 40px;
+    width: calc(100% - 240px);
+}
 
 /* Header */
-header { text-align:center; padding-bottom:40px; }
-header h1 { font-size:2rem; }
-header p { font-size:1.1rem; margin:10px 0; }
-header .contact span { display:block; margin:5px 0; }
-header .contact a { color:#1E3A8A; text-decoration:none; }
-
-/* Secciones */
-section { padding:60px 0; }
-section h2 { color:#1E40AF; font-size:1.8rem; margin-bottom:30px; text-align:center; }
-
-/* Cards */
-.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
-.card { background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); opacity:0; transform: translateY(50px); transition:0.6s; }
-.card h3 { color:#1E3A8A; margin-bottom:5px; }
-.card span { font-size:0.9rem; color:#64748B; }
-
-/* Skills */
-.skills { display:grid; gap:15px; }
-.skill span { font-weight:bold; }
-.bar { background-color:#E0F2FE; border-radius:8px; overflow:hidden; margin-top:5px; height:15px; }
-.bar div { height:100%; background-color:#3B82F6; width:0; border-radius:8px; transition: width 1s ease-in-out; }
-
-/* Soft skills */
-.soft-skills { margin-top:20px; text-align:center; font-style:italic; color:#1E3A8A; }
-
-/* Lists */
-#idiomas ul, #certificaciones ul { list-style:none; padding-left:0; }
-#idiomas li, #certificaciones li { padding:8px 0; }
-
-/* Footer */
-footer { text-align:center; padding:30px 0; background:#93C5FD; color:#1E3A8A; margin-top:40px; }
-
-/* Responsive */
-@media(max-width:900px){
-    body { flex-direction:column; }
-    #sidebar { width:100%; height:auto; flex-direction:row; justify-content:space-around; padding:20px; }
-    #main-content { margin-left:0; padding:20px; }
+header {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-/* Enlace activo en la barra lateral */
-#sidebar ul li a.active {
-    color: #3B82F6;
-    font-weight: bold;
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #334155; /* azul grisáceo */
+    margin-bottom: 15px;
+}
+
+header .contact span {
+    display: block;
+    margin: 5px 0;
+}
+
+/* Secciones */
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+/* Cards */
+.card {
+    background-color: #ffffff;
+    color: #1e293b;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Habilidades */
+.skills .skill {
+    margin-bottom: 15px;
+}
+
+.skills .skill p {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.bar {
+    background-color: #dbeafe;
+    height: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar div {
+    height: 100%;
+    width: 0;
+    background-color: #3B82F6;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+.soft-skills {
+    margin-top: 15px;
+    font-style: italic;
+    color: #334155;
+}
+
+/* Listas (Idiomas y Certificaciones) */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #334155;
+    border-top: 1px solid #cbd5e1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    body {
+        flex-direction: column;
+    }
+    #sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+    main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+    #sidebar ul {
+        display: flex;
+    }
+    #sidebar ul li {
+        margin: 0 10px;
+    }
 }
