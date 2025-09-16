@@ -30,7 +30,7 @@ Este proyecto está diseñado como un **portfolio profesional** que permite a re
 ## 🌐 Demo en línea
 
 El CV web está publicado en GitHub Pages:  
-[Ver CV Web de Sira González-Madroño](https://tu-usuario.github.io/CV-Sira-Web/)
+[Ver CV Web de Sira González-Madroño](https://siraglez.github.io/webCV/)
 
 ---
 
