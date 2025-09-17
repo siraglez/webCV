@@ -9,7 +9,7 @@
 body.dark-theme {
     display: flex;
     background-color: #EAF0FA; /* azul muy suave de fondo */
-    color: #1e293b; /* azul oscuro para texto */
+    color: #1c2233; /* texto principal oscuro */
     line-height: 1.6;
 }
 
@@ -37,7 +37,7 @@ body.dark-theme {
 
 #sidebar ul li a {
     text-decoration: none;
-    color: #679ef7; /* azul acento */
+    color: #4a7cd6; /* azul sobrio */
     font-weight: 500;
     transition: color 0.3s;
 }
@@ -50,7 +50,7 @@ body.dark-theme {
 .btn-download {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background: linear-gradient(90deg, #679ef7, #9465e6);
+    background: linear-gradient(90deg, #4a7cd6, #9465e6);
     color: #fff;
     border-radius: 8px;
     text-decoration: none;
@@ -60,7 +60,7 @@ body.dark-theme {
 }
 
 .btn-download:hover {
-    box-shadow: 0 0 15px #679ef7;
+    box-shadow: 0 0 15px #4a7cd6;
     transform: translateY(-2px);
 }
 
@@ -71,35 +71,49 @@ main {
     width: calc(100% - 240px);
 }
 
-/* Hero */
-.hero-text {
-    font-family: 'Fira Code', monospace;
-    font-size: 2.5rem;
-    color: #679ef7;
-    text-align: center;
-    margin-top: 2rem;
+/* Header info */
+.header-info {
+    text-align: center;        /* Centra todo el contenido */
+    margin-bottom: 2rem;
 }
 
-.hero-subtext {
-    text-align: center;
+.header-info h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0d1b2a;           /* Azul muy oscuro para destacar */
+    margin-bottom: 0.5rem;
+}
+
+.header-info h2 {
     font-size: 1.2rem;
-    color: #5b7fbd;
+    font-weight: 400;
+    color: #2f3e46;           /* Gris azulado oscuro */
     margin-bottom: 1.5rem;
 }
 
-header .contact span {
-    display: block;
-    margin: 5px 0;
-    color: #cfd8dc;
+.header-info .contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-header a {
-    color: #679ef7;
+.header-info .contact-info li {
+    margin: 0.4rem 0;
+    font-size: 1rem;
+    color: #2f3e46;           /* Oscuro pero legible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-info .contact-info li a {
+    color: #4a7cd6;           /* Azul sobrio para enlaces */
     text-decoration: none;
+    font-weight: 500;
 }
 
-header a:hover {
-    color: #9465e6;
+.header-info .contact-info li a:hover {
+    text-decoration: underline;
 }
 
 /* Secciones */
@@ -120,7 +134,7 @@ section.dark-section.visible {
 }
 
 section.dark-section h2 {
-    color: #679ef7;
+    color: #4a7cd6;
     margin-bottom: 1rem;
     font-family: 'Fira Code', monospace;
 }
@@ -131,24 +145,23 @@ section.dark-section h2 {
     padding: 1.2rem;
     margin-bottom: 1rem;
     border-radius: 10px;
-    border: 1px solid #679ef730; /* azul translúcido */
-    box-shadow: 0 4px 10px rgba(103, 158, 247, 0.15);
+    border: 1px solid #4a7cd650; /* azul translúcido */
+    box-shadow: 0 4px 10px rgba(74, 124, 214, 0.15);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-
 .experience-card:hover, .education-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 18px rgba(0, 229, 255, 0.25);
+    box-shadow: 0 6px 18px rgba(74, 124, 214, 0.25);
 }
 
 .experience-card h3, .education-card h3 {
-    color: #679ef7;
+    color: #4a7cd6;
     margin-bottom: 0.5rem;
 }
 
 .experience-card p, .education-card p {
-    color: #cfd8dc;
+    color: #e2e8f0;
     font-size: 0.95rem;
     line-height: 1.4;
 }
@@ -163,27 +176,27 @@ section.dark-section h2 {
 
 .skill-card {
     background-color: #1c2233;
-    border: 1px solid #679ef730; /* igual que las otras cards */
+    border: 1px solid #4a7cd650; 
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(103, 158, 247, 0.15);
+    box-shadow: 0 4px 10px rgba(74, 124, 214, 0.15);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .skill-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 14px rgba(103, 158, 247, 0.25);
+    box-shadow: 0 6px 14px rgba(74, 124, 214, 0.25);
 }
 
 .skill-card h3 {
-    color: #679ef7;
+    color: #4a7cd6;
     margin-bottom: 0.8rem;
     font-size: 1.2rem;
 }
 
 .skill-card p,
 .skill-card ul {
-    color: #cfd8dc;
+    color: #e2e8f0;
     line-height: 1.5;
     font-size: 0.95rem;
 }
@@ -201,15 +214,15 @@ ul {
 
 ul li {
     margin-bottom: 8px;
-    color: #cfd8dc;
+    color: #e2e8f0;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px 0;
-    color: #cfd8dc;
-    border-top: 1px solid #679ef730;
+    color: #1c2233; /* texto oscuro */
+    border-top: 1px solid #4a7cd650;
 }
 
 /* Responsive */
@@ -244,9 +257,8 @@ body.dark-theme::before {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: radial-gradient(circle at 20% 20%, #679ef710, transparent 50%),
+    background: radial-gradient(circle at 20% 20%, #4a7cd610, transparent 50%),
                 radial-gradient(circle at 80% 80%, #7c3aed10, transparent 50%);
     z-index: -1;
     pointer-events: none;
 }
-
