@@ -71,60 +71,34 @@ main {
     width: calc(100% - 240px);
 }
 
-/* Header info */
-.header-info {
+/* Header */
+header {
     text-align: center; 
-    margin: 2rem auto;       
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 2rem;       
 }
 
-.header-info h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #0d1b2a;           /* Azul muy oscuro para destacar */
-    margin-bottom: 0.8rem;
+header .hero-text {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #1a3d7c;           
+    margin-bottom: 0.5rem;
+    display: block;
 }
 
-.header-info h2 {
+header .hero-subtext {
     font-size: 1.2rem;
-    font-weight: 400;
-    color: #2f3e46;           /* Gris azulado oscuro */
-    margin-bottom: 1.5rem;
+    color: #333;           
+    margin-bottom: 1.2rem;
+    display: block;
 }
 
-.header-info .contact-info {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+header .contact {
     display: flex;
     flex-direction: column;
+    gap: 0.3rem;
     align-items: center;
-}
-
-.header-info .contact-info li {
-    margin: 0.4rem 0;
-    font-size: 1rem;
-    color: #2f3e46;           /* Oscuro pero legible */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-}
-
-.header-info .contact-info li a {
-    color: #4a7cd6;           /* Azul sobrio para enlaces */
-    text-decoration: none;
-    font-weight: 500;
-    display: flex;
-    flex-direction: column;
-}
-
-.header-info .contact-info li a:hover {
-    text-decoration: underline;
+    font-size: 0.95rem;
+    color: #444;
 }
 
 /* Secciones */
