@@ -73,15 +73,19 @@ main {
 
 /* Header info */
 .header-info {
-    text-align: center;        /* Centra todo el contenido */
-    margin-bottom: 2rem;
+    text-align: center; 
+    margin: 2rem auto;       
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header-info h1 {
     font-size: 2.5rem;
     font-weight: 700;
     color: #0d1b2a;           /* Azul muy oscuro para destacar */
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .header-info h2 {
@@ -95,6 +99,9 @@ main {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header-info .contact-info li {
