@@ -8,8 +8,8 @@
 
 body.dark-theme {
     display: flex;
-    background-color: #0b0f1a; /* azul oscuro tech */
-    color: #cfd8dc; /* gris claro para texto */
+    background-color: #EAF0FA; /* azul muy suave de fondo */
+    color: #1e293b; /* azul oscuro para texto */
     line-height: 1.6;
 }
 
@@ -37,20 +37,20 @@ body.dark-theme {
 
 #sidebar ul li a {
     text-decoration: none;
-    color: #00e5ff; /* cian tech */
+    color: #679ef7; /* azul acento */
     font-weight: 500;
     transition: color 0.3s;
 }
 
 #sidebar ul li a.active,
 #sidebar ul li a:hover {
-    color: #7c3aed; /* morado acento */
+    color: #9465e6; /* morado acento */
 }
 
 .btn-download {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background: linear-gradient(90deg, #00e5ff, #7c3aed);
+    background: linear-gradient(90deg, #679ef7, #9465e6);
     color: #fff;
     border-radius: 8px;
     text-decoration: none;
@@ -60,7 +60,7 @@ body.dark-theme {
 }
 
 .btn-download:hover {
-    box-shadow: 0 0 15px #00e5ff;
+    box-shadow: 0 0 15px #679ef7;
     transform: translateY(-2px);
 }
 
@@ -75,7 +75,7 @@ main {
 .hero-text {
     font-family: 'Fira Code', monospace;
     font-size: 2.5rem;
-    color: #00e5ff;
+    color: #679ef7;
     text-align: center;
     margin-top: 2rem;
 }
@@ -83,7 +83,7 @@ main {
 .hero-subtext {
     text-align: center;
     font-size: 1.2rem;
-    color: #80deea;
+    color: #5b7fbd;
     margin-bottom: 1.5rem;
 }
 
@@ -94,12 +94,12 @@ header .contact span {
 }
 
 header a {
-    color: #00e5ff;
+    color: #679ef7;
     text-decoration: none;
 }
 
 header a:hover {
-    color: #7c3aed;
+    color: #9465e6;
 }
 
 /* Secciones */
@@ -120,7 +120,7 @@ section.dark-section.visible {
 }
 
 section.dark-section h2 {
-    color: #00e5ff;
+    color: #679ef7;
     margin-bottom: 1rem;
     font-family: 'Fira Code', monospace;
 }
@@ -131,10 +131,11 @@ section.dark-section h2 {
     padding: 1.2rem;
     margin-bottom: 1rem;
     border-radius: 10px;
-    border: 1px solid #00e5ff30;
-    box-shadow: 0 4px 10px rgba(0, 229, 255, 0.1);
+    border: 1px solid #679ef730; /* azul translúcido */
+    box-shadow: 0 4px 10px rgba(103, 158, 247, 0.15);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 
 .experience-card:hover, .education-card:hover {
     transform: translateY(-4px);
@@ -142,7 +143,7 @@ section.dark-section h2 {
 }
 
 .experience-card h3, .education-card h3 {
-    color: #00e5ff;
+    color: #679ef7;
     margin-bottom: 0.5rem;
 }
 
@@ -162,20 +163,20 @@ section.dark-section h2 {
 
 .skill-card {
     background-color: #1c2233;
-    border: 1px solid #00e5ff30;
+    border: 1px solid #679ef730; /* igual que las otras cards */
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 229, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(103, 158, 247, 0.15);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .skill-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 14px rgba(0, 229, 255, 0.2);
+    box-shadow: 0 6px 14px rgba(103, 158, 247, 0.25);
 }
 
 .skill-card h3 {
-    color: #00e5ff;
+    color: #679ef7;
     margin-bottom: 0.8rem;
     font-size: 1.2rem;
 }
@@ -208,7 +209,7 @@ footer {
     text-align: center;
     padding: 20px 0;
     color: #cfd8dc;
-    border-top: 1px solid #00e5ff30;
+    border-top: 1px solid #679ef730;
 }
 
 /* Responsive */
@@ -243,8 +244,9 @@ body.dark-theme::before {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: radial-gradient(circle at 20% 20%, #00e5ff10, transparent 50%),
+    background: radial-gradient(circle at 20% 20%, #679ef710, transparent 50%),
                 radial-gradient(circle at 80% 80%, #7c3aed10, transparent 50%);
     z-index: -1;
     pointer-events: none;
 }
+
