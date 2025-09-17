@@ -33,3 +33,16 @@ window.addEventListener('scroll', () => {
         if(link.getAttribute('href') === `#${current}`) link.classList.add('active');
     });
 });
+
+// Fade-in sections al hacer scroll
+const sectionsDark = document.querySelectorAll('.dark-section');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.2 });
+
+sectionsDark.forEach(section => observer.observe(section));
