@@ -111,12 +111,16 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-info .contact-info li a {
     color: #4a7cd6;           /* Azul sobrio para enlaces */
     text-decoration: none;
     font-weight: 500;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-info .contact-info li a:hover {
