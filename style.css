@@ -187,3 +187,44 @@ footer {
         margin: 0 10px;
     }
 }
+
+/* ===== Habilidades ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.skill-card {
+  background: #f5f9ff; /* azul muy suave */
+  border: 1px solid #d6e4ff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 68, 204, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 68, 204, 0.15);
+}
+
+.skill-card h3 {
+  color: #0044cc; /* azul intenso */
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.skill-card p,
+.skill-card ul {
+  color: #333;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.skill-card ul {
+  list-style: disc inside;
+  padding-left: 0.5rem;
+}
