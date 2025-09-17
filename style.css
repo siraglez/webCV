@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 body.dark-theme {
@@ -11,7 +11,6 @@ body.dark-theme {
     background-color: #0b0f1a; /* azul oscuro tech */
     color: #cfd8dc; /* gris claro para texto */
     line-height: 1.6;
-    font-family: 'Inter', sans-serif;
 }
 
 /* Barra lateral */
@@ -38,14 +37,14 @@ body.dark-theme {
 
 #sidebar ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #00e5ff; /* cian tech */
     font-weight: 500;
     transition: color 0.3s;
 }
 
 #sidebar ul li a.active,
 #sidebar ul li a:hover {
-    color: #00e5ff; /* cian tech */
+    color: #7c3aed; /* morado acento */
 }
 
 .btn-download {
@@ -53,16 +52,16 @@ body.dark-theme {
     padding: 0.8rem 1.5rem;
     background: linear-gradient(90deg, #00e5ff, #7c3aed);
     color: #fff;
-    text-align: center;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    text-align: center;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .btn-download:hover {
     box-shadow: 0 0 15px #00e5ff;
-    transform: transalteY(-2px);
+    transform: translateY(-2px);
 }
 
 /* Contenido principal */
@@ -72,26 +71,35 @@ main {
     width: calc(100% - 240px);
 }
 
-/* Header */
-header {
+/* Hero */
+.hero-text {
+    font-family: 'Fira Code', monospace;
+    font-size: 2.5rem;
+    color: #00e5ff;
     text-align: center;
-    margin-bottom: 50px;
+    margin-top: 2rem;
 }
 
-header h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.1rem;
-    color: #334155; /* azul grisáceo */
-    margin-bottom: 15px;
+.hero-subtext {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #80deea;
+    margin-bottom: 1.5rem;
 }
 
 header .contact span {
     display: block;
     margin: 5px 0;
+    color: #cfd8dc;
+}
+
+header a {
+    color: #00e5ff;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #7c3aed;
 }
 
 /* Secciones */
@@ -117,7 +125,7 @@ section.dark-section h2 {
     font-family: 'Fira Code', monospace;
 }
 
-/* Cards */
+/* Cards de Experiencia y Formación */
 .experience-card, .education-card {
     background-color: #1c2233;
     padding: 1.2rem;
@@ -135,9 +143,16 @@ section.dark-section h2 {
 
 .experience-card h3, .education-card h3 {
     color: #00e5ff;
+    margin-bottom: 0.5rem;
 }
 
-/* Habilidades */
+.experience-card p, .education-card p {
+    color: #cfd8dc;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Skills */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -161,26 +176,20 @@ section.dark-section h2 {
 
 .skill-card h3 {
     color: #00e5ff;
-}
-.skill-card p, .skill-card ul {
-    color: #cfd8dc;
-}
-
-
-/* Hero Section */
-.hero-text {
-    font-family: 'Fira Code', monospace;
-    font-size: 2.5rem;
-    color: #00e5ff;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.hero-subtext {
-    text-align: center;
+    margin-bottom: 0.8rem;
     font-size: 1.2rem;
-    color: #80deea;
-    margin-bottom: 1.5rem;
+}
+
+.skill-card p,
+.skill-card ul {
+    color: #cfd8dc;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.skill-card ul {
+    list-style: disc inside;
+    padding-left: 0.5rem;
 }
 
 /* Listas (Idiomas y Certificaciones) */
@@ -191,19 +200,20 @@ ul {
 
 ul li {
     margin-bottom: 8px;
+    color: #cfd8dc;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px 0;
-    color: #334155;
-    border-top: 1px solid #cbd5e1;
+    color: #cfd8dc;
+    border-top: 1px solid #00e5ff30;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-    body {
+    body.dark-theme {
         flex-direction: column;
     }
     #sidebar {
@@ -227,3 +237,14 @@ footer {
     }
 }
 
+/* Fondo dinámico */
+body.dark-theme::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at 20% 20%, #00e5ff10, transparent 50%),
+                radial-gradient(circle at 80% 80%, #7c3aed10, transparent 50%);
+    z-index: -1;
+    pointer-events: none;
+}
