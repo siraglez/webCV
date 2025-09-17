@@ -6,11 +6,12 @@
     font-family: 'Arial', sans-serif;
 }
 
-body {
+body.dark-theme {
     display: flex;
-    background-color: #EAF0FA; /* azul muy suave de fondo */
-    color: #1e293b; /* azul oscuro para texto */
+    background-color: #0b0f1a; /* azul oscuro tech */
+    color: #cfd8dc; /* gris claro para texto */
     line-height: 1.6;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Barra lateral */
@@ -20,7 +21,7 @@ body {
     left: 0;
     width: 220px;
     height: 100%;
-    background-color: #3B82F6; /* azul intenso */
+    background-color: #111629; /* azul oscuro base */
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -44,23 +45,24 @@ body {
 
 #sidebar ul li a.active,
 #sidebar ul li a:hover {
-    color: #f0f4f8; /* azul claro para resaltar */
+    color: #00e5ff; /* cian tech */
 }
 
 .btn-download {
     display: inline-block;
-    padding: 10px;
-    background-color: #ffffff;
-    color: #3B82F6;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(90deg, #00e5ff, #7c3aed);
+    color: #fff;
     text-align: center;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .btn-download:hover {
-    background-color: #DBEAFE;
+    box-shadow: 0 0 15px #00e5ff;
+    transform: transalteY(-2px);
 }
 
 /* Contenido principal */
@@ -93,55 +95,92 @@ header .contact span {
 }
 
 /* Secciones */
-section {
-    margin-bottom: 50px;
+section.dark-section {
+    background-color: #111629;
+    padding: 2rem 1rem;
+    margin: 1rem 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 68, 204, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #1e293b;
+section.dark-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section.dark-section h2 {
+    color: #00e5ff;
+    margin-bottom: 1rem;
+    font-family: 'Fira Code', monospace;
 }
 
 /* Cards */
-.card {
-    background-color: #ffffff;
-    color: #1e293b;
-    padding: 15px 20px;
-    margin-bottom: 20px;
+.experience-card, .education-card {
+    background-color: #1c2233;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #00e5ff30;
+    box-shadow: 0 4px 10px rgba(0, 229, 255, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-card:hover, .education-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 229, 255, 0.25);
+}
+
+.experience-card h3, .education-card h3 {
+    color: #00e5ff;
 }
 
 /* Habilidades */
-.skills .skill {
-    margin-bottom: 15px;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
-.skills .skill p {
-    margin-bottom: 5px;
-    font-weight: 600;
+.skill-card {
+    background-color: #1c2233;
+    border: 1px solid #00e5ff30;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 229, 255, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.bar {
-    background-color: #dbeafe;
-    height: 15px;
-    border-radius: 10px;
-    overflow: hidden;
+.skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 229, 255, 0.2);
 }
 
-.bar div {
-    height: 100%;
-    width: 0;
-    background-color: #3B82F6;
-    border-radius: 10px;
-    transition: width 1s ease-in-out;
+.skill-card h3 {
+    color: #00e5ff;
+}
+.skill-card p, .skill-card ul {
+    color: #cfd8dc;
 }
 
-.soft-skills {
-    margin-top: 15px;
-    font-style: italic;
-    color: #334155;
+
+/* Hero Section */
+.hero-text {
+    font-family: 'Fira Code', monospace;
+    font-size: 2.5rem;
+    color: #00e5ff;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.hero-subtext {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #80deea;
+    margin-bottom: 1.5rem;
 }
 
 /* Listas (Idiomas y Certificaciones) */
@@ -188,43 +227,3 @@ footer {
     }
 }
 
-/* ===== Habilidades ===== */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.skill-card {
-  background: #f5f9ff; /* azul muy suave */
-  border: 1px solid #d6e4ff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0, 68, 204, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0, 68, 204, 0.15);
-}
-
-.skill-card h3 {
-  color: #0044cc; /* azul intenso */
-  margin-bottom: 0.8rem;
-  font-size: 1.2rem;
-}
-
-.skill-card p,
-.skill-card ul {
-  color: #333;
-  line-height: 1.5;
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-.skill-card ul {
-  list-style: disc inside;
-  padding-left: 0.5rem;
-}
