@@ -1,304 +1,160 @@
-/* Reset y base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+/* ---------------- General ---------------- */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+  color: #1a202c;
+  display: flex;
 }
 
-body.dark-theme {
-    display: flex;
-    background-color: #EAF0FA; /* azul muy suave de fondo */
-    color: #1c2233; /* texto principal oscuro */
-    line-height: 1.6;
-}
-
-/* Barra lateral */
+/* ---------------- Sidebar ---------------- */
 #sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 220px;
-    height: 100%;
-    background-color: #111629; /* azul oscuro base */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: #1e293b;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1000;
 }
 
 #sidebar ul {
-    list-style: none;
+  list-style: none;
+  padding: 0;
 }
 
 #sidebar ul li {
-    margin-bottom: 20px;
+  margin: 1rem 0;
 }
 
 #sidebar ul li a {
-    text-decoration: none;
-    color: #4a7cd6; /* azul sobrio */
-    font-weight: 500;
-    transition: color 0.3s;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-#sidebar ul li a.active,
-#sidebar ul li a:hover {
-    color: #9465e6; /* morado acento */
+#sidebar ul li a:hover,
+#sidebar ul li a.active {
+  color: #3b82f6;
 }
 
 .btn-download {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background: linear-gradient(90deg, #4a7cd6, #9465e6);
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #3b82f6;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 2rem;
 }
 
-.btn-download:hover {
-    box-shadow: 0 0 15px #4a7cd6;
-    transform: translateY(-2px);
-}
-
-/* Contenido principal */
+/* ---------------- Main ---------------- */
 main {
-    margin-left: 240px;
-    padding: 20px 40px;
-    width: calc(100% - 240px);
+  margin-left: 220px;
+  padding: 2rem;
+  flex: 1;
 }
 
-/* Header */
 header {
-    text-align: center; 
-    margin-bottom: 2rem;       
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-header .hero-text {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #1a3d7c;           
-    margin-bottom: 0.5rem;
-    display: block;
+.hero-text {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
 }
 
-header .hero-subtext {
-    font-size: 1.2rem;
-    color: #333;           
-    margin-bottom: 1.2rem;
-    display: block;
+.hero-subtext {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 1rem;
 }
 
-header .contact {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    align-items: center;
-    font-size: 0.95rem;
-    color: #444;
+.contact span {
+  display: block;
+  font-size: 0.95rem;
+  color: #1f2937;
+  margin: 0.2rem 0;
 }
 
-/* Secciones */
-section.dark-section {
-    background-color: #111629;
-    padding: 2rem 1rem;
-    margin: 1rem 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 68, 204, 0.2);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+.contact a {
+  color: #3b82f6;
+  text-decoration: none;
 }
 
-section.dark-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* ---------------- Secciones ---------------- */
+.dark-section {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
 }
 
-section.dark-section h2 {
-    color: #4a7cd6;
-    margin-bottom: 1rem;
-    font-family: 'Fira Code', monospace;
+.dark-section h2 {
+  font-family: 'Fira Code', monospace;
+  color: #60a5fa;
 }
 
-/* Cards de Experiencia y Formación */
-.experience-card, .education-card {
-    background-color: #1c2233;
-    padding: 1.2rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    border: 1px solid #4a7cd650; /* azul translúcido */
-    box-shadow: 0 4px 10px rgba(74, 124, 214, 0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.experience-card:hover, .education-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 18px rgba(74, 124, 214, 0.25);
-}
-
-.experience-card h3, .education-card h3 {
-    color: #4a7cd6;
-    margin-bottom: 0.5rem;
-}
-
-.experience-card p, .education-card p {
-    color: #e2e8f0;
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-/* Skills */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
+.experience-card,
+.education-card,
 .skill-card {
-    background-color: #1c2233;
-    border: 1px solid #4a7cd650; 
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(74, 124, 214, 0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #334155;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
 }
 
-.skill-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 14px rgba(74, 124, 214, 0.25);
-}
-
-.skill-card h3 {
-    color: #4a7cd6;
-    margin-bottom: 0.8rem;
-    font-size: 1.2rem;
-}
-
-.skill-card p,
-.skill-card ul {
-    color: #e2e8f0;
-    line-height: 1.5;
-    font-size: 0.95rem;
-}
-
-.skill-card ul {
-    list-style: disc inside;
-    padding-left: 0.5rem;
-}
-
-/* Listas (Idiomas y Certificaciones) */
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-ul li {
-    margin-bottom: 8px;
-    color: #e2e8f0;
-}
-
-/* Footer */
+/* ---------------- Footer ---------------- */
 footer {
-    text-align: center;
-    padding: 20px 0;
-    color: #1c2233; /* texto oscuro */
-    border-top: 1px solid #4a7cd650;
+  text-align: center;
+  padding: 1rem;
+  color: #6b7280;
+  font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    body.dark-theme {
-        flex-direction: column;
-    }
-    #sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 10px 0;
-    }
-    main {
-        margin-left: 0;
-        width: 100%;
-        padding: 20px;
-    }
-    #sidebar ul {
-        display: flex;
-    }
-    #sidebar ul li {
-        margin: 0 10px;
-    }
-}
-
-/* Fondo dinámico */
-body.dark-theme::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: radial-gradient(circle at 20% 20%, #4a7cd610, transparent 50%),
-                radial-gradient(circle at 80% 80%, #7c3aed10, transparent 50%);
-    z-index: -1;
-    pointer-events: none;
-}
-
+/* ---------------- Botón menú hamburguesa ---------------- */
 #menu-toggle {
-    display: none;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1001;
-    background: #4a7cd6;
-    color: white;
-    border: none;
-    font-size: 1.5rem;
-    padding: 0.5rem 0.8rem;
-    border-radius: 6px;
-    cursor: pointer;
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* Responsive menú hamburguesa */
+/* ---------------- Responsive ---------------- */
 @media (max-width: 900px) {
-    #sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 220px;
-        height: 100%;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 2rem 1rem;
-        z-index: 1000;
-    }
+  #sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
 
-    #sidebar.open {
-        transform: translateX(0);
-    }
+  #sidebar.open {
+    transform: translateX(0);
+  }
 
-    #menu-toggle {
-        display: block;
-    }
+  #menu-toggle {
+    display: block;
+  }
 
-    main {
-        margin-left: 0;
-        width: 100%;
-        padding: 20px;
-    }
-
-    #sidebar ul {
-        display: block;
-    }
-
-    #sidebar ul li {
-        margin: 1rem 0;
-    }
+  main {
+    margin-left: 0;
+    padding: 1rem;
+  }
 }
-
