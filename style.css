@@ -247,3 +247,58 @@ body.dark-theme::before {
     z-index: -1;
     pointer-events: none;
 }
+
+#menu-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    background: #4a7cd6;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Responsive menú hamburguesa */
+@media (max-width: 900px) {
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2rem 1rem;
+        z-index: 1000;
+    }
+
+    #sidebar.open {
+        transform: translateX(0);
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    #sidebar ul {
+        display: block;
+    }
+
+    #sidebar ul li {
+        margin: 1rem 0;
+    }
+}
+
