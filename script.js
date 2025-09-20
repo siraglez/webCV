@@ -8,6 +8,21 @@ ScrollReveal().reveal('.skills .skill', { duration:1000, origin:'left', distance
 ScrollReveal().reveal('.soft-skills', { duration:1000, origin:'bottom', distance:'20px', delay:200 });
 ScrollReveal().reveal('#idiomas li, #certificaciones li', { duration:1000, origin:'left', distance:'50px', interval:200, reset:false });
 
+// Menú hamburguesa
+const menuToggle = document.getElementById("menu-toggle");
+const sidebar = document.getElementById("sidebar");
+
+menuToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
+
+// Cerrar menú al hacer click en un enlace
+document.querySelectorAll("#sidebar nav ul li a").forEach(link => {
+    link.addEventListener("click", () => {
+        sidebar.classList.remove("open");
+    });
+});
+
 // Animación de las barras de habilidades
 const skillBars = document.querySelectorAll('.bar div');
 window.addEventListener('scroll', () => {
