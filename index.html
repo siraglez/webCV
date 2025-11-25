@@ -7,7 +7,11 @@
     <title>CV Sira González-Madroño</title>
 
     <!-- Fuentes para mejorar la apariencia -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,7 +20,7 @@
 <body class="dark-theme">
 
     <!-- overlay para cuando el sidebar esté abierto en móvil -->
-     <div id="overlay" class="hidden"></div>
+    <div id="overlay" class="hidden"></div>
 
     <!-- Botón menú hamburguesa -->
     <button id="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
@@ -40,7 +44,8 @@
     <main>
         <header id="inicio">
             <h1 class="hero-text">Sira González-Madroño García</h1>
-            <p class="hero-subtext">Estudiante de Ingeniería Informática | Bilingüe | Experiencia en proyectos reales</p>
+            <p class="hero-subtext">Estudiante de Ingeniería Informática | Bilingüe | Experiencia en proyectos reales
+            </p>
 
             <div class="profile-container">
                 <div class="profile-card">
@@ -48,14 +53,15 @@
                         <img src="fotoPerfil.png" alt="Foto Sira">
                     </div>
                     <div class="profile-back">
-                        <model-viewer
+                        <model-viewer 
                             src="https://models.readyplayer.me/6925f5c0fadfd987ccb953fa.glb"
-                            alt="Avatar 3D Sira"
-                            loading="eager"
-                            auto-rotate
-                            camera-controls
+                            alt="Avatar 3D Sira" 
+                            camera-controls 
+                            auto-rotate 
+                            disable-zoom 
                             shadow-intensity="1"
-                            touch-action="pan-y"
+                            environment-image="neutral" 
+                            style="background-color: #1e293b;"
                         ></model-viewer>
                     </div>
                 </div>
@@ -65,7 +71,8 @@
                 <span>📍 Boadilla del Monte, Madrid, España</span>
                 <span>📞 (+34) 639 168 955</span>
                 <span>✉️ <a href="mailto:sira@madronogarcia.com" class="email-link">sira@madronogarcia.com</a></span>
-                <span>🔗 <a href="https://linkedin.com/in/sira-glez" target="_blank">linkedin.com/in/sira-glez</a></span>
+                <span>🔗 <a href="https://linkedin.com/in/sira-glez"
+                        target="_blank">linkedin.com/in/sira-glez</a></span>
                 <span>🔗 <a href="https://github.com/siraglez" target="_blank">github.com/siraglez</a></span>
             </div>
         </header>
