@@ -320,9 +320,15 @@ model-viewer {
     height: 100%;
     display: block;
     background-color: #1e293b; 
-    --poster-color: transparent;
     border-radius: 50%;
+    --poster-color: transparent;
 }
 .profile-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
     transform-style: preserve-3d;
+    transform: translateZ(0); 
 }
