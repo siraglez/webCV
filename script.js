@@ -17,6 +17,15 @@ function toggleMenu() {
     }
 }
 
+// ---- Forzar Inicio arriba al recargar ----
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+} else {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+}
+
 // Eventos Click
 menuToggle.addEventListener("click", toggleMenu);
 overlay.addEventListener("click", toggleMenu); // Cierra al hacer click fuera
