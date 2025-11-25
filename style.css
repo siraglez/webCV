@@ -326,145 +326,124 @@ model-viewer {
     transform: scale(1.1); 
 }
 /* =========================================
-   ESTILOS PARA IMPRESIÓN (PDF A4)
+   ESTILOS DE IMPRESIÓN (PDF A4)
    ========================================= */
 @media print {
-    /* 1. REGLA DE ORO: Todo negro sobre blanco */
-    * {
-        background-color: transparent !important;
-        background: transparent !important;
-        color: #000000 !important; 
-        box-shadow: none !important;
-        text-shadow: none !important; 
-    }
-
-    /* 2. Configuración de página y limpieza */
-    @page {
-        margin: 1.5cm;
-        size: A4;
-    }
-
+    /* 1. RESET OBLIGATORIO DE LA ESTRUCTURA */
     html, body {
-        width: 100%;
-        height: auto;
-        margin: 0;
-        padding: 0;
-        overflow: visible !important; 
-    }
-
-    /* Ocultar elementos de navegación */
-    #sidebar, #menu-toggle, #overlay, .btn-download, .profile-back, footer { 
-        display: none !important;
-    }
-
-    /* 3. Contenedor principal */
-    main {
+        height: auto !important;
+        width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
-        width: 100% !important;
-        display: block !important;
+        overflow: visible !important; 
+        display: block !important;   
+        background-color: #fff !important;
     }
 
-    /* 4. Títulos */
+    /* 2. Ocultar lo que no queremos en papel */
+    #sidebar, #menu-toggle, #overlay, .btn-download, .profile-back, footer { 
+        display: none !important; 
+    }
+
+    /* 3. Contenedor Principal */
+    main {
+        margin: 0 !important;
+        padding: 1cm !important;
+        width: 100% !important;
+        max-width: none !important;
+        display: block !important;
+        position: static !important; 
+    }
+
+    /* 4. Títulos en Negro */
     .hero-text {
-        font-size: 24pt !important;
-        line-height: 1.2 !important;
+        font-size: 20pt !important;
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
         text-align: center;
         margin-bottom: 5px !important;
-        -webkit-text-fill-color: #000 !important; 
     }
-    
     .hero-subtext {
-        font-size: 11pt !important;
-        text-align: center;
         color: #444 !important;
-        margin-bottom: 15px !important;
-    }
-
-    /* Contacto en línea */
-    .contact {
         text-align: center;
         margin-bottom: 20px !important;
-        font-size: 9pt !important;
-    }
-    .contact span {
-        display: inline-block; 
-        margin: 0 8px;
-        white-space: nowrap; 
-    }
-    .contact a { text-decoration: none !important; }
-
-    /* 5. Secciones */
-    h2 {
-        font-size: 16pt !important;
-        border-bottom: 2px solid #000;
-        margin-top: 20px !important;
-        margin-bottom: 10px !important;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    /* 6. Evitar que el texto se corte en los bordes */
-    p, li, h3, h2, span {
-        word-wrap: break-word; 
-        overflow-wrap: break-word;
-        white-space: normal !important; 
-    }
-
-    /* 7. Tarjetas simplificadas */
-    .experience-card, .education-card {
-        border-bottom: 1px dotted #999 !important; 
-        margin-bottom: 10px !important;
-        padding-bottom: 5px !important;
-        border-radius: 0 !important;
-        border-left: none !important;
-        border-right: none !important;
-        border-top: none !important;
-    }
-
-    .experience-card h3, .education-card h3 {
-        font-size: 12pt !important;
-        font-weight: bold;
-        margin-bottom: 2px !important;
     }
     
-    /* Fechas alineadas a la derecha si caben, o abajo */
-    .experience-card p:first-of-type { 
-        font-style: italic;
+    .contact {
+        text-align: center;
+        margin-bottom: 30px !important;
         font-size: 9pt !important;
-        color: #333 !important;
+        color: #000 !important;
+    }
+    .contact span { display: inline-block; margin: 0 5px; color: #000 !important; }
+    .contact a { text-decoration: none !important; color: #000 !important; }
+
+    /* 5. ARREGLO DE SECCIONES CORTADAS (Lo importante) */
+    section {
+        display: block !important;
+        height: auto !important;
+        margin-bottom: 20px !important;
+        page-break-inside: auto !important; 
+        background: transparent !important;
+        border: none !important;
     }
 
-    /* 8. Grid de Habilidades (El punto crítico) */
+    h2 {
+        color: #000 !important;
+        border-bottom: 2px solid #000;
+        margin-bottom: 15px !important;
+        page-break-after: avoid; 
+    }
+
+    /* 6. TARJETAS DE EXPERIENCIA Y FORMACIÓN */
+    .experience-card, .education-card {
+        display: block !important;
+        width: 100% !important;
+        background: transparent !important;
+        color: #000 !important;
+        border: none !important;
+        border-bottom: 1px dotted #aaa !important;
+        padding: 0 0 10px 0 !important;
+        margin-bottom: 10px !important;
+        box-shadow: none !important;
+        
+        break-inside: avoid; 
+        page-break-inside: avoid; 
+    }
+
+    .experience-card h3, .education-card h3, .experience-card p, .education-card p {
+        color: #000 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* 7. HABILIDADES (Formato lista simple para que no falle) */
     .skills-grid {
         display: block !important; 
     }
-    
     .skill-card {
-        display: inline-block !important; 
-        width: 45% !important; 
+        display: inline-block !important;
+        width: 45% !important;
         vertical-align: top;
         margin-bottom: 10px;
+        padding-right: 10px;
         border: none !important;
-        padding: 0 !important;
+        background: transparent !important;
     }
-    
-    .skill-card h3 {
-        font-size: 10pt !important;
-        text-decoration: underline;
-        margin-bottom: 2px !important;
+    .skill-card h3 { 
+        color: #000 !important; 
+        text-decoration: underline; 
+        margin-bottom: 5px;
     }
-    
-    .skill-card p, .skill-card li {
-        font-size: 9pt !important;
-        line-height: 1.3;
-    }
+    .skill-card p, .skill-card li { color: #000 !important; font-size: 9pt; }
 
-    /* Ajuste de foto para que no estorbe */
+    /* Foto perfil */
     .profile-container {
-        width: 0 !important; 
-        height: 0 !important;
-        margin: 0 !important;
-        display: none !important; 
+        width: 70px !important;
+        height: 70px !important;
+        margin: 0 auto !important;
+        perspective: none !important;
     }
+    .profile-front { border: 1px solid #000; }
+    .profile-card { transform: none !important; }
 }
