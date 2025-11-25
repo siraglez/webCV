@@ -318,7 +318,11 @@ footer {
 model-viewer {
     width: 100%;
     height: 100%;
-    /* Un fondo ligeramente distinto para el 3D si quieres contraste */
+    display: block;
     background-color: #1e293b; 
     --poster-color: transparent;
+    border-radius: 50%;
+}
+.profile-card {
+    transform-style: preserve-3d;
 }
