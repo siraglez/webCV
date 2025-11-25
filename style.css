@@ -17,6 +17,21 @@ body {
   overflow-x: hidden; /* Evita scroll horizontal en móvil */
 }
 
+/* Estilo para el enlace de correo */
+.email-link {
+    color: var(--accent); /* Usa tu color azul cyan */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent; /* Prepara una línea invisible */
+}
+
+.email-link:hover {
+    color: #fff; /* Se pone blanco al pasar el ratón */
+    border-bottom: 1px solid var(--accent); /* Aparece una línea debajo */
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.5); /* Pequeño brillo neon */
+}
+
 /* ---------------- Sidebar ---------------- */
 #sidebar {
   position: fixed;
