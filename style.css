@@ -102,6 +102,9 @@ main {
 }
 
 header {
+  text-align: center;
+  margin: 0 auto 4rem auto;
+  max-width: 900px;
   margin-bottom: 4rem;
 }
 

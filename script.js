@@ -3,7 +3,7 @@ const menuToggle = document.getElementById("menu-toggle");
 const sidebar = document.getElementById("sidebar");
 const overlay = document.getElementById("overlay");
 const navLinks = document.querySelectorAll("#sidebar nav ul li a");
-const sections = document.querySelectorAll("section");
+const sections = document.querySelectorAll("section, header");
 
 // ---- Menú Hamburguesa & Overlay ----
 function toggleMenu() {
