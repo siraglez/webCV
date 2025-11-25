@@ -259,3 +259,66 @@ footer {
       font-size: 2.2rem;
   }
 }
+
+/* =========================================
+   FOTO DE PERFIL 3D (FLIP EFFECT)
+   ========================================= */
+.profile-container {
+    background-color: transparent;
+    width: 180px;   /* Un poco más grande para que luzca el 3D */
+    height: 180px;
+    perspective: 1000px; /* Necesario para el efecto 3D */
+    margin: 2.5rem auto; /* Centrado horizontal y margen vertical */
+    cursor: grab; /* Icono de mano para indicar que es interactivo */
+}
+
+/* El contenedor interno que se mueve */
+.profile-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1); /* Giro más suave */
+    transform-style: preserve-3d;
+}
+
+/* Acción al pasar el ratón: Girar */
+.profile-container:hover .profile-card {
+    transform: rotateY(180deg);
+}
+
+/* Configuración común para ambas caras */
+.profile-front, .profile-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Oculta la parte trasera */
+    backface-visibility: hidden;
+    border-radius: 50%; /* Hace el contenedor redondo */
+    overflow: hidden;   /* Recorta el contenido al círculo */
+    border: 3px solid var(--accent); /* Borde color Cyan */
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3); /* Brillo Neon suave */
+    background-color: var(--bg-card); /* Fondo para que no se transparente */
+}
+
+/* Ajuste para la imagen frontal */
+.profile-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Cara Trasera (Donde va el 3D) */
+.profile-back {
+    transform: rotateY(180deg); /* Ya está girada esperando */
+}
+
+/* ✨ AJUSTE CLAVE PARA EL VISOR 3D ✨ */
+/* Esto asegura que el modelo 3D llene el círculo */
+model-viewer {
+    width: 100%;
+    height: 100%;
+    /* Un fondo ligeramente distinto para el 3D si quieres contraste */
+    background-color: #1e293b; 
+    --poster-color: transparent;
+}
