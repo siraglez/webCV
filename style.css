@@ -86,6 +86,11 @@ body {
   text-decoration: none;
   margin-top: 1rem;
   transition: transform 0.2s;
+  border: none;       
+  cursor: pointer;    
+  font-family: inherit; 
+  font-size: 1rem;    
+  width: 100%;
 }
 
 .btn-download:hover {
@@ -319,4 +324,111 @@ model-viewer {
     height: 100%;
     display: block;
     transform: scale(1.1); 
+}
+/* =========================================
+   ESTILOS PARA IMPRESIÓN (PDF AUTOMÁTICO)
+   ========================================= */
+@media print {
+    /* 1. Ocultar elementos que no queremos en el PDF */
+    #sidebar, 
+    #menu-toggle, 
+    #overlay, 
+    .btn-download,
+    .profile-back { /* Ocultamos el avatar 3D, solo queremos la foto fija */
+        display: none !important;
+    }
+
+    /* 2. Resetear colores para papel (Fondo blanco, texto negro) */
+    body, main, header, section, .experience-card, .education-card, .skill-card {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* 3. Ajustar márgenes y anchos */
+    body {
+        display: block; /* Quitamos flex */
+    }
+
+    main {
+        margin: 0 !important; /* Quitamos el margen de la barra lateral */
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 4. Ajustes específicos de texto */
+    .hero-text {
+        color: #000000 !important; /* Quitamos el degradado */
+        -webkit-text-fill-color: initial !important;
+        font-size: 2.5rem;
+    }
+
+    .hero-subtext {
+        color: #444 !important;
+    }
+
+    h2 {
+        color: #000000 !important;
+        border-bottom: 2px solid #000;
+        margin-top: 20px;
+    }
+
+    h3 {
+        color: #000;
+        font-weight: bold;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #000 !important;
+    }
+    
+    /* Mostrar la URL real al lado de los enlaces (opcional, útil para papel) */
+    /* a::after { content: " (" attr(href) ")"; font-size: 0.8rem; } */
+
+    /* 5. Ajustes de la foto de perfil */
+    .profile-container {
+        margin: 1rem auto;
+        width: 120px;
+        height: 120px;
+        /* Quitamos el efecto 3D para que salga plana y limpia */
+        perspective: none; 
+    }
+    
+    .profile-card {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    
+    .profile-front {
+        position: relative;
+        border: 2px solid #000;
+        /* Aseguramos que se vea la foto estática */
+        visibility: visible !important; 
+    }
+
+    /* 6. Ahorrar espacio en las tarjetas */
+    .experience-card, .education-card {
+        padding: 0.5rem 0;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #ddd !important;
+    }
+
+    /* Grid de habilidades más compacto */
+    .skills-grid {
+        grid-template-columns: 1fr 1fr; /* Dos columnas fijas */
+        gap: 1rem;
+    }
+    
+    .skill-card {
+        padding: 0.5rem;
+        border: 1px solid #eee !important;
+    }
+
+    /* Evitar que una sección se corte a mitad de página */
+    section, .experience-card {
+        break-inside: avoid;
+    }
 }
