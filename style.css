@@ -326,109 +326,158 @@ model-viewer {
     transform: scale(1.1); 
 }
 /* =========================================
-   ESTILOS PARA IMPRESIÓN (PDF AUTOMÁTICO)
+   ESTILOS PARA IMPRESIÓN (PDF COMPACTO A4)
    ========================================= */
 @media print {
-    /* 1. Ocultar elementos que no queremos en el PDF */
+    /* 1. Configuración de la página (Márgenes estrechos) */
+    @page {
+        margin: 1cm;
+        size: A4;
+    }
+
+    /* 2. Ocultar lo que no sirve en papel */
     #sidebar, 
     #menu-toggle, 
     #overlay, 
     .btn-download,
-    .profile-back { /* Ocultamos el avatar 3D, solo queremos la foto fija */
+    .profile-back { 
         display: none !important;
     }
 
-    /* 2. Resetear colores para papel (Fondo blanco, texto negro) */
-    body, main, header, section, .experience-card, .education-card, .skill-card {
-        background-color: #ffffff !important;
-        color: #000000 !important;
-        box-shadow: none !important;
-        border: none !important;
-    }
-
-    /* 3. Ajustar márgenes y anchos */
+    /* 3. Reset general para ahorrar tinta y espacio */
     body {
-        display: block; /* Quitamos flex */
+        background-color: #fff !important;
+        color: #000 !important;
+        font-size: 10pt; 
+        line-height: 1.3;
+        display: block; 
     }
 
     main {
-        margin: 0 !important; /* Quitamos el margen de la barra lateral */
+        margin: 0 !important;
         padding: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
     }
 
-    /* 4. Ajustes específicos de texto */
+    /* 4. Cabecera compacta */
+    header {
+        margin-bottom: 15px !important;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .hero-text {
-        color: #000000 !important; /* Quitamos el degradado */
+        color: #000 !important;
         -webkit-text-fill-color: initial !important;
-        font-size: 2.5rem;
+        font-size: 22pt !important; 
+        margin: 0 !important;
     }
 
     .hero-subtext {
+        font-size: 10pt !important;
         color: #444 !important;
+        margin-bottom: 5px !important;
+    }
+
+    /* Contacto en una sola línea para ahorrar espacio vertical */
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .contact span {
+        display: inline-block;
+        margin: 0 !important;
+        font-size: 9pt !important;
+    }
+
+    /* Foto pequeña y estática */
+    .profile-container {
+        width: 80px !important; 
+        height: 80px !important;
+        margin: 5px auto !important;
+        perspective: none;
+    }
+    .profile-front {
+        border: 1px solid #333;
+    }
+    .profile-card { transform: none !important; }
+
+    /* 5. Secciones compactas */
+    section {
+        margin-bottom: 15px !important; /* Poco margen entre secciones */
+        page-break-inside: auto; /* IMPORTANTE: Permite cortar la sección entre páginas */
     }
 
     h2 {
-        color: #000000 !important;
-        border-bottom: 2px solid #000;
-        margin-top: 20px;
+        color: #000 !important;
+        font-size: 14pt !important;
+        border-bottom: 1px solid #999;
+        margin-bottom: 10px !important;
+        padding-bottom: 2px;
     }
 
-    h3 {
-        color: #000;
+    /* 6. Tarjetas (Experiencia y Formación) */
+    .experience-card, .education-card {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 10px !important;
+        box-shadow: none !important;
+        
+        /* IMPORTANTE: La tarjeta NO se corta, pero la sección sí */
+        break-inside: avoid; 
+        page-break-inside: avoid;
+    }
+
+    .experience-card h3, .education-card h3 {
+        color: #000 !important;
+        font-size: 11pt !important;
+        margin-bottom: 2px !important;
         font-weight: bold;
     }
-    
-    a {
-        text-decoration: none;
-        color: #000 !important;
-    }
-    
-    /* Mostrar la URL real al lado de los enlaces (opcional, útil para papel) */
-    /* a::after { content: " (" attr(href) ")"; font-size: 0.8rem; } */
 
-    /* 5. Ajustes de la foto de perfil */
-    .profile-container {
-        margin: 1rem auto;
-        width: 120px;
-        height: 120px;
-        /* Quitamos el efecto 3D para que salga plana y limpia */
-        perspective: none; 
-    }
-    
-    .profile-card {
-        transform: none !important;
-        box-shadow: none !important;
-    }
-    
-    .profile-front {
-        position: relative;
-        border: 2px solid #000;
-        /* Aseguramos que se vea la foto estática */
-        visibility: visible !important; 
+    .experience-card p, .education-card p {
+        margin: 2px 0;
+        color: #333;
     }
 
-    /* 6. Ahorrar espacio en las tarjetas */
-    .experience-card, .education-card {
-        padding: 0.5rem 0;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid #ddd !important;
-    }
-
-    /* Grid de habilidades más compacto */
+    /* 7. Habilidades en columnas */
     .skills-grid {
-        grid-template-columns: 1fr 1fr; /* Dos columnas fijas */
-        gap: 1rem;
-    }
-    
-    .skill-card {
-        padding: 0.5rem;
-        border: 1px solid #eee !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px !important;
     }
 
-    /* Evitar que una sección se corte a mitad de página */
-    section, .experience-card {
+    .skill-card {
+        background: none !important;
+        border: 1px solid #eee !important;
+        padding: 5px !important;
         break-inside: avoid;
     }
+    
+    .skill-card h3 {
+        font-size: 10pt !important;
+        margin-bottom: 5px !important;
+        text-decoration: underline;
+    }
+    
+    .skill-card p, .skill-card ul li {
+        font-size: 8pt !important;
+    }
+
+    /* Listas compactas */
+    ul { margin: 0; padding-left: 15px; }
+    li { margin-bottom: 2px !important; }
+
+    /* Enlaces negros */
+    a { color: #000 !important; text-decoration: none; }
+    
+    /* Footer */
+    footer { display: none; }
 }
