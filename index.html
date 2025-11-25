@@ -5,18 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Sira González-Madroño</title>
+
+    <!-- Fuentes para mejorar la apariencia -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet"> 
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="dark-theme">
 
+    <!-- overlay para cuando el sidebar esté abierto en móvil -->
+     <div id="overlay" class="hidden"></div>
+
     <!-- Botón menú hamburguesa -->
-    <button id="menu-toggle">☰</button>
+    <button id="menu-toggle" aria-label="Abrir menú"><i class=fas fa-bars></i></button>
 
     <!-- Barra lateral -->
     <aside id="sidebar">
-        <div class="logo">Sira GM</div>
         <nav>
             <ul>
                 <li><a href="#experiencia" class="active">Experiencia</a></li>
@@ -91,7 +97,11 @@
         <!-- Sección Certificaciones -->
         <section id="certificaciones" class="dark-section">
             <h2>Formación Complementaria y Certificaciones</h2>
+            <h3>Se puede comprobar la certificación oficial o el ID de certificación en mi perfil de LinkedIn</h3>
             <ul>
+                <li>CourseStack - Foundations of Log Analysis for Cyber Defense</li>
+                <li>CourseStack - Introduction to Offensive Security with IA</li>
+                <li>BIG school - Iniciación al Desarrollo con IA</li>
                 <li>Google - Inteligencia Artificial y productividad</li>
                 <li>MIT - Introducción a la IA generativa</li>
                 <li>Santander Open Academy - Introducción a Python</li>
@@ -124,7 +134,7 @@
 
                 <div class="skill-card">
                     <h3>Herramientas & Otros</h3>
-                    <p>Git, GitHub, GitLab, JWT, Apache, Cisco Networking, Figma</p>
+                    <p>Git, GitHub, GitLab, Cisco Networking, Figma</p>
                 </div>
 
                 <div class="skill-card">
