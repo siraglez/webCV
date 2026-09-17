@@ -1,6 +1,6 @@
 # 🌟 CV Web de Sira González-Madroño García
 
-Bienvenido/a al **CV web interactivo** de Sira González-Madroño García, estudiante del último curso de **Ingeniería Informática**.  
+Bienvenido/a al **CV web interactivo** de Sira González-Madroño García, graduada en **Ingeniería Informática** y estudiante de un Máster de **Ciberseguridad** en University West, Suecia.  
 Este proyecto está diseñado como un **portfolio profesional** que permite a reclutadores y empresas navegar por su perfil de manera dinámica y visual.
 
 ---
@@ -19,11 +19,12 @@ Este proyecto está diseñado como un **portfolio profesional** que permite a re
 
 ## 🚀 Secciones del CV Web
 
-1. **Experiencia** – Proyectos y trabajos previos, incluyendo prácticas universitarias.  
-2. **Formación** – Educación académica y estudios en el extranjero.  
-3. **Certificaciones** – Cursos y certificaciones en IA, programación, análisis de datos y negociación.  
-4. **Habilidades** – Técnicas (C, Java, Python, HTML/CSS, Kotlin, Firebase, Redes, DB, Excel) y blandas (liderazgo, trabajo en equipo, aprendizaje rápido).  
-5. **Idiomas** – Español nativo e Inglés bilingüe (C1).
+1.**Inicio** - Pequeña descripción del perfil.
+2. **Experiencia** – Proyectos y trabajos previos, incluyendo prácticas universitarias.  
+3. **Formación** – Educación académica y estudios en el extranjero.  
+4. **Certificaciones** – Cursos y certificaciones en distintas áreas.  
+5. **Habilidades** – Técnicas y blandas.  
+6. **Idiomas** – Español nativo e Inglés bilingüe (C2).
 
 ---
 
