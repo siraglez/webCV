@@ -19,7 +19,7 @@ Este proyecto está diseñado como un **portfolio profesional** que permite a re
 
 ## 🚀 Secciones del CV Web
 
-1.**Inicio** - Pequeña descripción del perfil.
+1. **Inicio** - Pequeña descripción del perfil.
 2. **Experiencia** – Proyectos y trabajos previos, incluyendo prácticas universitarias.  
 3. **Formación** – Educación académica y estudios en el extranjero.  
 4. **Certificaciones** – Cursos y certificaciones en distintas áreas.  
